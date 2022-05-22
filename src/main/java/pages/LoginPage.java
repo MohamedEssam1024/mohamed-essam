@@ -22,6 +22,9 @@ public class LoginPage extends PageBase{
     @FindBy(css = "#loginform > div.clearfix._5466._44mg > div._9ay7")
     public WebElement invalidLoginError;
 
+    @FindBy(id = "error_box")
+    public WebElement errorBox;
+
     @FindBy(css = "a[class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")
     public WebElement createNewAccount;
 

@@ -28,7 +28,10 @@ public class LoginTests extends TestBase{
         loginPage.enterPassword("12345678ah");
         loginPage.loginButton.click();
         waitTillPageLoad();
-        Assert.assertEquals(loginPage.invalidLoginError.getText(),"The email address you entered isn't connected to an account. Find your account and log in.");
+        if (loginPage.errorBox.isDisplayed())
+            Assert.assertEquals(loginPage.errorBox.getText(),"Wrong credentials\nInvalid username or password");
+        else
+            Assert.assertEquals(loginPage.invalidLoginError.getText(),"The email address you entered isn't connected to an account. Find your account and log in.");
     }
 
     @Test(priority = 2)
@@ -38,7 +41,10 @@ public class LoginTests extends TestBase{
         loginPage.enterPassword("12345678");
         loginPage.loginButton.click();
         waitTillPageLoad();
-        Assert.assertEquals(loginPage.invalidLoginError.getText(),"The password that you've entered is incorrect. Forgotten password?");
+        if (loginPage.errorBox.isDisplayed())
+            Assert.assertEquals(loginPage.errorBox.getText(),"Wrong credentials\nInvalid username or password");
+        else
+            Assert.assertEquals(loginPage.invalidLoginError.getText(),"The password that you've entered is incorrect. Forgotten password?");
     }
 
 }

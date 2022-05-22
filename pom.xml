@@ -33,6 +33,12 @@
             <artifactId>selenium-chrome-driver</artifactId>
             <version>3.141.59</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.1</version>
+        </dependency>
     </dependencies>
 
 </project>
