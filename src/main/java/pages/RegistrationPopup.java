@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,7 +56,7 @@ public class RegistrationPopup extends PageBase{
         this.lastName.clear();
         setTextElementText(this.lastName, lastName);
     }
-    public void enterEmail(String emailOrPhone) {
+    public void enterEmailOrPhone(String emailOrPhone) {
         this.emailOrPhone.clear();
         setTextElementText(this.emailOrPhone, emailOrPhone);
     }
